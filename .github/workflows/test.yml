@@ -1,8 +1,6 @@
 name: test1 workflow
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   Test:
@@ -10,5 +8,6 @@ jobs:
     steps:
       - name: step1
         run: |
+          echo "started workflow"
           echo "${{ vars.SONAR_HOST_URL }}"
           
